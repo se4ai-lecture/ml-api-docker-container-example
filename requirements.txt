@@ -3,3 +3,4 @@ flask_cors==3.0.10
 numpy==1.22.3
 tensorflow==2.8.0
 Werkzeug==2.1.2
+pillow==9.1.0
