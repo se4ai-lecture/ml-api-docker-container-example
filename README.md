@@ -28,6 +28,6 @@ python src/usage-example.py
 export FLASK_APP=src/prediction-api.py
 # start the API --> API offers the endpoint `POST http://localhost:5000/cat-predictions`
 flask run
-# for enabling hot reload
+# for enabling hot reload (execute before starting)
 export FLASK_ENV=development
 ```
