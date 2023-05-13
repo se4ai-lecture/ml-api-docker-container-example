@@ -30,4 +30,20 @@ export FLASK_APP=src/prediction-api.py
 flask run
 # for enabling hot reload (execute before starting)
 export FLASK_ENV=development
+
+# Docker
+# build the image from the created `Dockerfile`
+docker build --tag cat-prediction-api .
+# list all images (check for the newly created one)
+docker images
+# create and run a container from the image in detached mode
+docker run -d -p 5000:5000 --name ml-api cat-prediction-api
+# see if the container is running (if it is, you can send HTTP requests to it)
+docker ps -a
+# see logs from the container
+docker logs ml-api
+# stop the container
+docker stop ml-api
+# delete the container once you don't need it anymore
+docker rm ml-api
 ```
