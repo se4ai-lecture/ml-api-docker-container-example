@@ -1,4 +1,4 @@
-# based on https://flask.palletsprojects.com/en/2.1.x/patterns/fileuploads/
+# based on https://flask.palletsprojects.com/en/2.2.x/patterns/fileuploads/
 
 import os
 import pathlib
