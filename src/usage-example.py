@@ -1,7 +1,7 @@
 from CatPredictor import CatPredictor
 
 # define example image
-filename = 'images/ea36b20a2ef5083ed1584d05fb1d4e9fe777ead218ac104497f5c978a7e8b7bc_640.jpg'
+filename = 'images/ea36b20b28fd093ed1584d05fb1d4e9fe777ead218ac104497f5c978a7eebdbb_640.jpg'
 
 # instantiate CatPredictor object
 cat_pred = CatPredictor()
