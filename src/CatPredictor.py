@@ -9,8 +9,8 @@ from keras.utils.image_utils import img_to_array, load_img
 class CatPredictor:
     def __init__(self):
         # init the models
-        self.vgg_model = vgg16.VGG16(weights = "imagenet")
-        self.mobilenet_model = mobilenet.MobileNet(weights = "imagenet")
+        self.vgg_model = vgg16.VGG16(weights = 'imagenet')
+        self.mobilenet_model = mobilenet.MobileNet(weights = 'imagenet')
 
     def load_batch_image(self, filename):
         """
@@ -21,17 +21,17 @@ class CatPredictor:
             The loaded image in batch format
         """
         # load an image in PIL format
-        print("\nLoading image `" + filename + "`...")
+        print('\nLoading image `' + filename + '`...')
         original = load_img(filename, target_size = (224, 224))
-        print("PIL image size", original.size)
+        print('PIL image size', original.size)
         # convert the PIL image to a numpy array
         # IN PIL - image is in (width, height, channel), in Numpy - image is in (height, width, channel)
         numpy_image = img_to_array(original)
-        print("numpy array size", numpy_image.shape)
+        print('numpy array size', numpy_image.shape)
         # Convert the image / images into batch format
         # We want the input matrix to the network to be of the form (batchsize, height, width, channels)
         image_batch = np.expand_dims(numpy_image, axis = 0)
-        print("image batch size", image_batch.shape)
+        print('image batch size', image_batch.shape)
         return image_batch
 
     def print_predictions(self, label):
@@ -41,7 +41,7 @@ class CatPredictor:
             label: a label array in imagenet format (transformed with `decode_predictions()` from `imagenet_utils`)
         """
         for id in range(len(label[0])):
-            print(label[0][id][1], ":", label[0][id][2])
+            print(label[0][id][1], ':', label[0][id][2])
 
     def predict(self, filename):
         """
@@ -74,4 +74,4 @@ class CatPredictor:
         label_mobilenet = decode_predictions(predictions)
         ###################################################
 
-        return {"vgg16": label_vgg, "mobilenet": label_mobilenet}
+        return {'vgg16': label_vgg, 'mobilenet': label_mobilenet}
